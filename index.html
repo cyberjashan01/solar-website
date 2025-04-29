@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Solar Panel Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: #f4fbff;
+            color: #003366;
+        }
+
+        header {
+            background: linear-gradient(to right, #007acc, #00bcd4);
+            padding: 30px;
+            text-align: center;
+            color: white;
+            font-size: 2.8em;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0091c2;
+            padding: 12px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            margin: 0 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffe600;
+        }
+
+        section {
+            margin: 60px 10%;
+            border-top: 6px solid #0091c2;
+            padding-top: 40px;
+        }
+
+        .section1 {
+            position: relative;
+            text-align: center;
+            color: white;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .section1 img {
+            width: 100%;
+            height: auto;
+            filter: blur(2px) brightness(70%);
+        }
+
+        .section1 .text-block {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            background-color: rgba(0, 102, 153, 0.9);
+            padding: 30px 40px;
+            border-radius: 12px;
+            animation: slideIn 2s ease;
+            max-width: 600px;
+        }
+
+        .section1 ul {
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .section1 li {
+            margin-bottom: 10px;
+        }
+
+        .section {
+            background-color: #e6f7ff;
+            padding: 40px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #007acc;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #005f99;
+        }
+
+        table {
+            margin: 20px auto;
+            width: 90%;
+            border-collapse: collapse;
+        }
+        #maintenance {
+            background-color: #e6f7ff; /* Light background for contrast */
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        
+        #maintenance h2 {
+            color: #2c3e50; /* Darker color for headings */
+        }
+        
+        #maintenance ul {
+            margin-top: 10px; /* Space above the list */
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        th {
+            background-color: #007acc;
+            color: white;
+        }
+
+        .section3 {
+            padding: 30px;
+            text-align: center;
+            background-color: #f4fbff;
+        }
+
+        .creator {
+            display: inline-block;
+            margin: 20px;
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-200%); } /* Adjust based on how many slides you have */
+          }
+          
+
+        .creator img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 4px solid #007acc;
+            object-fit: cover;
+        }
+
+        .creator:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { top: 50%; opacity: 0; }
+            to { top: 30%; opacity: 1; }
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-25%); }
+            50% { transform: translateX(-50%); }
+            75% { transform: translateX(-75%); }
+            100% { transform: translateX(0); }
+          }
+    </style>
+</head>
+<body>
+    <header>Team Gen-Mac </header>
+
+    <nav>
+        <a href="#section1">Working</a>
+        <a href="#section2">Calculator</a>
+        <a href="#section3">Creators</a>
+    </nav>
+
+    <section id="section1" class="section1">
+        <img src="https://cdn.britannica.com/94/192794-050-3F3F3DDD/panels-electricity-order-sunlight.jpg" alt="Solar Panel Background">
+        <div class="text-block">
+            <h2>How Solar Panels Work</h2>
+            <ul>
+                <li>Solar cells convert sunlight into electricity</li>
+                <li>DC current is converted to AC using an inverter</li>
+                <li>Energy is stored or used for appliances</li>
+                <li>Excess energy can be fed to the grid</li>
+            </ul>
+        </div>
+    </section>
+    <section class="video-section" style="display: flex; justify-content: center; align-items: center; padding: 40px 0; background-color: #f5f5f5;">
+        <video width="640" height="360" autoplay muted loop controls style="border-radius: 12px;">
+          <source src="your-video-file.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </section>
+
+      <section>
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 60px 20px; max-width: 1200px; margin: auto; gap: 40px;">
+
+            <!-- Benefits List -->
+            <div style="flex: 1; min-width: 300px;" data-aos="fade-right" data-aos-duration="1200">
+              <h2 style="font-size: 32px; margin-bottom: 24px; color: #2c3e50;">Top Benefits of Installing Solar Panels</h2>
+              <ul style="list-style: none; padding: 0; font-size: 18px; line-height: 1.8; color: #34495e;">
+                <li style="margin-bottom: 16px;">
+                  <strong>1. Significant Cost Savings</strong><br>
+                  Drastically reduce monthly electricity bills by generating your own clean energy, leading to long-term financial benefits.
+                </li>
+                <li style="margin-bottom: 16px;">
+                  <strong>2. Environmentally Responsible</strong><br>
+                  Solar power is a renewable, sustainable source of energy that helps lower carbon emissions and combat climate change.
+                </li>
+                <li style="margin-bottom: 16px;">
+                  <strong>3. Low Maintenance Requirements</strong><br>
+                  Once installed, solar panels require minimal upkeep with warranties often extending 20–25 years, making them a hassle-free investment.
+                </li>
+                <li>
+                  <strong>4. Increased Property Value</strong><br>
+                  Homes with solar systems are seen as modern and energy-efficient, often commanding higher market value and buyer interest.
+                </li>
+              </ul>
+            </div>
+          
+            <!-- Image -->
+            <div style="flex: 1; min-width: 300px; text-align: center;" data-aos="fade-left" data-aos-duration="1200">
+              <img src="https://www.encstore.com/assets/blogs/1651854375-economic-benefits-of-solar-panel.jpg" alt="Solar Panel" style="max-width: 100%; border-radius: 16px; box-shadow: 0 10px 20px rgba(0,0,0,0.15);">
+            </div>
+          
+          </div>
+          
+      </section>
+      <section id="maintenance" class="section" style="display: flex; align-items: center; justify-content: space-between; padding: 60px 20px; background-color: #e6f7ff;">
+        <!-- Video on the left side -->
+        <div style="flex: 1; padding-right: 20px;">
+            <video width="100%" height="auto" controls style="border-radius: 12px;">
+                <source src="https://media-hosting.imagekit.io/ac538042a256462a/WhatsApp%20Video%202025-04-05%20at%2023.49.25.mp4?Expires=1838485250&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=p-POQjuuAg9Ryh2YgWR-s1R~X0TVaoUKI6FZDfCcajyaCRfNCI0L6ISv4njFAOdZ4tID83iuMLvJWgiscqNI1QRvf~vNndE5LGSzwe4fgPae7kyrxhB7KX70mJDSWeTw0TqO9KVVdNSevG6iZP9Mo3H9hHXQgfkt~DUO5Ajwdyzi~BzZ8loXivuWuzu~OXQMKG33Ct2g3fmF2d36wPBUetOCjJc-~n0kyp95Wa7tOMBHz96DZHc1vS4kH9TdHteIqEZiXjd92W5XkA39Hep4fQo1088RUwNaPYbpj39vlyRrJqsMHyw1E3j5hS03F16VpRjy5gbDRBA1VyXEiVr8dg__" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    
+        <!-- Points explaining maintenance on the right side -->
+        <div style="flex: 1; padding-left: 20px; text-align: left;">
+            <h2 style="font-size: 2rem; margin-bottom: 20px; color: #2c3e50;">Maintenance of Solar Panels</h2>
+            <p style="font-size: 1.1rem; color: #34495e; margin-bottom: 20px;">
+                Regular maintenance of solar panels is essential to ensure optimal performance and longevity. Here are some key practices to follow:
+            </p>
+            <ul style="list-style-type: disc; padding-left: 20px; font-size: 1.1rem; color: #34495e;">
+                <li><strong>1. Regular Cleaning:</strong> 
+                    <p style="margin: 5px 0;">Clean the panels every 1-3 months to remove dust, dirt, and debris. This ensures maximum sunlight absorption and efficiency.</p>
+                </li>
+                <li><strong>2. Monitor for Shade:</strong> 
+                    <p style="margin: 5px 0;">Regularly check for any new obstructions, such as trees or buildings, that may cast shadows on the panels, reducing their efficiency.</p>
+                </li>
+                <li><strong>3. Inspect for Damage:</strong> 
+                    <p style="margin: 5px 0;">Conduct visual inspections for cracks, loose connections, or other damage. Address any issues promptly to prevent further complications.</p>
+                </li>
+                <li><strong>4. Performance Monitoring:</strong> 
+                    <p style="margin: 5px 0;">Utilize monitoring tools to track energy output. If you notice a significant drop in performance, investigate potential causes.</p>
+                </li>
+                <li><strong>5. Schedule Professional Inspections:</strong> 
+                    <p style="margin: 5px 0;">Engage a professional to conduct a thorough inspection at least once a year. This ensures all components are functioning optimally.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+      <section style="padding: 60px 20px; text-align: center; background-color: #fff;">
+        <h2 style="font-size: 2rem; margin-bottom: 10px;">Marketing Campaign</h2>
+        <p style="max-width: 600px; margin: 0 auto 40px auto; font-size: 1rem; color: #555;">
+          Explore our latest marketing efforts that creatively engage our audience across various platforms, boosting awareness for solar energy.
+        </p>
+      
+        <div style="width: 90%; margin: 0 auto; position: relative; overflow: hidden;">
+            <!-- Carousel Wrapper -->
+            <div id="carousel" style="display: flex; transition: transform 0.5s ease;">
+              <!-- Slide 1 -->
+              <div style="min-width: 100%; text-align: center;">
+                <img src="https://i.postimg.cc/Xq4gk4Xz/1.jpg" alt="Campaign 1" style="width: 100%; object-fit: cover;">
+                <p style="margin-top: 10px;">Spreading awareness among students of Nankana Saheb School.</p>
+              </div>
+          
+              <!-- Slide 2 -->
+              <div style="min-width: 100%; text-align: center;">
+                <img src="https://i.postimg.cc/t4wtmhYP/2.jpg" alt="Campaign 2" style="width: 100%; object-fit: cover;">
+                <p style="margin-top: 10px;">Dr. Harpuneet Singh at GNDEC, shaping our vision for a brighter, cleaner future.</p>
+              </div>
+          
+              <!-- Slide 3 -->
+              <div style="min-width: 100%; text-align: center;">
+                <img src="https://i.postimg.cc/sf4mDQNd/3.jpg" alt="Campaign 3" style="width: 100%; object-fit: cover;">
+                <p style="margin-top: 10px;">Got new customers for the support of solar panel at their homes.</p>
+              </div>
+          
+              <!-- Slide 4 -->
+              <div style="min-width: 100%; text-align: center;">
+                <img src="https://i.postimg.cc/TYkcn8xt/4.jpg" alt="Campaign 4" style="width: 100%; object-fit: cover;">
+                <p style="margin-top: 10px;">Spread awareness for students of School of Eminence.</p>
+              </div>
+          
+              <!-- Slide 5 -->
+              <div style="min-width: 100%; text-align: center;">
+                <img src="https://i.postimg.cc/tCR51qK1/5.jpg" alt="Campaign 5" style="width: 100%; object-fit: cover;">
+                <p style="margin-top: 10px;">An awareness campaign held at local courts.</p>
+              </div>
+          
+              <!-- Slide 6 -->
+              <div style="min-width: 100%; text-align: center;">
+                <img src="https://i.postimg.cc/SKc8TH0F/6.jpg" alt="Campaign 6" style="width: 100%; object-fit: cover;">
+                <p style="margin-top: 10px;">An awareness campaign at local panchayats.</p>
+              </div>
+          
+              <!-- Slide 7 -->
+              <div style="min-width: 100%; text-align: center;">
+                <img src="https://i.postimg.cc/pVCQtNmP/7.jpg" alt="Campaign 7" style="width: 100%; object-fit: cover;">
+                <p style="margin-top: 10px;">Got support from principal of Govt. School, Gill village.</p>
+              </div>
+            </div>
+          
+            <!-- Arrows -->
+            <button onclick="prevSlide()" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer;">&#10094;</button>
+            <button onclick="nextSlide()" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer;">&#10095;</button>
+          
+            <!-- JavaScript -->
+            <script>
+              const carousel = document.getElementById('carousel');
+              const slides = carousel.children;
+              let index = 0;
+              const total = slides.length;
+          
+              function updateCarousel() {
+                carousel.style.transform = `translateX(-${index * 100}%)`;
+              }
+          
+              function nextSlide() {
+                index = (index + 1) % total;
+                updateCarousel();
+              }
+          
+              function prevSlide() {
+                index = (index - 1 + total) % total;
+                updateCarousel();
+              }
+          
+              setInterval(nextSlide, 4000); // Auto-slide every 4 seconds
+            </script>
+          </div>
+          
+              
+              
+        </div>
+      </section>
+
+    <section id="section2" class="section">
+        <h2>Energy Consumption Calculator</h2>
+        <p>Enter the number of appliances you want to calculate:</p>
+        <input type="number" id="numItems" placeholder="Enter number of items">
+        <button class="btn" onclick="generateTable()">Proceed</button>
+        <div id="calcSection"></div>
+    </section>
+
+    <section id="section3" class="section3">
+        <h2>Project Creators</h2>
+        <div class="creator">
+            <img src="https://i.postimg.cc/yY7wmZMP/14.jpg" alt="Creator 1">
+            <p>Himanshu Gambhir </p>
+        </div>
+        <div class="creator">
+            <img src="https://i.postimg.cc/qq4ZxP5R/15.jpg" alt="Creator 2">
+            <p>Jeetu Kumar Jha </p>
+        </div>
+        <div class="creator">
+            <img src="https://i.postimg.cc/ZnkPZ6Sy/Whats-App-Image-2025-04-05-at-23-33-25.jpg" alt="Creator 3">
+            <p>Harman Singh Pannu </p>
+        </div>
+        <div class="creator">
+            <img src="https://avatars.githubusercontent.com/u/81140275?s=400&u=8ff43ec86031c3a02043e9f7498f3c9eedf22066&v=4" alt="Creator 3">
+            <p>Jashan Malhotra </p>
+        </div>
+        <div class="creator">
+            <img src="https://i.postimg.cc/qv5SHZzb/18.jpg" alt="Creator 3">
+            <p>Gurumeet Sandhir</p>
+        </div>
+        <div class="creator">
+            <img src="https://i.postimg.cc/y6yG8NDS/19.jpg" alt="Creator 3">
+            <p>Sonu Tiwari</p>
+        </div>
+
+    </section>
+
+    <script>
+        function generateTable() {
+            let numItems = document.getElementById("numItems").value;
+            if (numItems > 0) {
+                let tableHTML = `<table>
+                    <tr>
+                        <th>Device Name</th>
+                        <th>Energy Consumed (W)</th>
+                        <th>Number of Appliances</th>
+                        <th>Hours Used Per Day</th>
+                    </tr>`;
+
+                for (let i = 0; i < numItems; i++) {
+                    tableHTML += `<tr>
+                        <td><input type='text' placeholder='Enter Device'></td>
+                        <td><input type='number' placeholder='Watts'></td>
+                        <td><input type='number' placeholder='Quantity'></td>
+                        <td><input type='number' placeholder='Hours'></td>
+                    </tr>`;
+                }
+
+                tableHTML += `</table><br>
+                    <button class='btn' onclick='calculateTotalEnergy()'>Calculate</button>
+                    <p id='totalEnergy'></p>`;
+
+                document.getElementById("calcSection").innerHTML = tableHTML;
+            } else {
+                alert("Please enter a valid number of items.");
+            }
+        }
+
+        function calculateTotalEnergy() {
+            let rows = document.querySelectorAll("table tr");
+            let totalEnergy = 0;
+            for (let i = 1; i < rows.length; i++) {
+                let cells = rows[i].querySelectorAll("td input");
+                let watts = parseFloat(cells[1].value) || 0;
+                let quantity = parseFloat(cells[2].value) || 0;
+                let hours = parseFloat(cells[3].value) || 0;
+                totalEnergy += watts * quantity * hours;
+            }
+            document.getElementById("totalEnergy").innerText = `Total Daily Energy Consumption: ${totalEnergy} Wh`;
+        }
+    </script>
+</body>
+</html>
